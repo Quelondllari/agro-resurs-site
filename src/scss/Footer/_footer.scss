@@ -1,0 +1,177 @@
+.footer {
+    padding-top: 1.875rem;
+    background-image: url('@img/price_back.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        background-color: rgba($color: $cr-main, $alpha: .77);
+        backdrop-filter: blur(9.5px);
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__callback {
+        width: 100%;
+        max-width: 770px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 4;
+        padding-bottom: 1.25rem;
+
+        &-title {
+            color: $cr-white;
+            margin-bottom: 0;
+
+            &>span {
+                color: $cr-yellow;
+            }
+        }
+
+        &-text {
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            color: $cr-white;
+            margin: 0 0 1.8rem;
+        }
+
+        &-fields {
+            grid-template-columns: 1fr 1fr auto;
+            grid-column-gap: 1.25rem;
+        }
+
+        &-field {
+            &:last-child {
+                grid-column: span 3;
+            }
+        }
+
+        &-input {
+            border-color: $cr-white;
+            color: $cr-white;
+            background-color: rgba($color: $cr-white, $alpha: 0);
+
+            &:focus-visible{
+                color: $cr-white;
+            }
+        }
+
+        &-btn{
+            &:hover, &:focus-visible{
+                color: $cr-white;
+            }
+        }
+    }
+
+    &__content{
+        position: relative;
+        z-index: 3;
+        padding-top: 8.125rem;
+        padding-bottom: 2.5rem;
+        background-image: url('@img/back_piece-foot.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $cr-white;
+
+        &-container{
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &-col{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &:last-child{
+                max-width: 320px;
+            }
+
+            &-text{
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.25;
+                color: $cr-white;
+
+                &:not(:last-child){
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            &-btn{
+                color: $cr-white;
+                margin-bottom: 1.5rem;
+
+                &:hover, &:focus-visible{
+                    color: $cr-black;
+                }
+            }
+        }
+
+        &-link{
+            &:not(:last-child){
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__logotype{
+        margin-bottom: 0.75rem;
+    }
+
+    &__nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 3.75rem;
+
+        &-list{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        &-link{
+            display: inline-block;
+            color: $cr-white;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 250ms ease-in-out;
+
+            &:hover, &:focus-visible{
+                color: $cr-yellow;
+            }
+
+            &--title{
+                font-size: 0.875rem;
+                color: $cr-yellow;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 0.625rem;
+
+                &:hover, &:focus-visible{
+                    color: $cr-submain;
+                }
+            }
+        }
+    }
+}
+
+// === Подключение медии ===
+@import "media"
+// #== Подключение медии ==#

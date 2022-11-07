@@ -1,0 +1,59 @@
+@include m-tablet-m{
+    .footer{
+        &__content{
+            &-col{
+                padding-bottom: 2rem;
+
+                &:last-child{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+@include m-tablet-s{
+    .footer{
+        &__callback{
+            margin-bottom: -4rem;
+        }
+    }
+}
+
+@include m-phone{
+    .footer{
+        &__callback{
+            margin-bottom: -7rem;
+
+            &-text{
+                font-size: 0.875rem;
+            }
+
+            &-fields{
+                grid-template-columns: 100%;
+            }
+
+            &-field{
+                &:last-child{
+                    grid-column: auto;
+                }
+                &:nth-last-child(2){
+                    align-items: center;
+                }
+            }
+        }
+
+        &__nav{
+            grid-column-gap: 1rem;
+
+            &-link{
+                line-height: 1.15;
+            }
+
+            &-item{
+                &:not(:last-child){
+                    margin-bottom: 0.2rem;
+                }
+            }
+        }
+    }
+}

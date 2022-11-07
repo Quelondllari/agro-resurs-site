@@ -1,0 +1,135 @@
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    z-index: 100;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba($color: $cr-black, $alpha: 0.2);
+    transition: all 350ms ease-in-out;
+    opacity: 1;
+    visibility: visible;
+
+    &.--is_fade{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__content {
+        width: 50%;
+        background-color: $cr-white;
+        background-image: url("@img/back_piece-2.svg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        max-height: calc(var(--vh, 1vh) * 100);
+        overflow: hidden;
+        transition: all 350ms ease-in-out;
+    }
+
+    &.--is_fade > &__content{
+        transform: translateX(-100%);
+    }
+
+    &__header {
+        position: relative;
+        padding: 2rem 2rem 1rem;
+    }
+
+    &__title {
+        font-size: 2.25rem;
+        font-weight: 500;
+        color: $cr-black;
+        line-height: 1;
+
+        &>span {
+            color: $cr-yellow;
+        }
+    }
+
+    &__close {
+        display: block;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 1.7rem;
+        line-height: 0.8;
+        color: $cr-black;
+        transition: color 250ms ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+            color: $cr-yellow
+        }
+    }
+
+    &__body {
+        padding: 1rem 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: calc(var(--vh, 1vh) * 85);
+        position: relative;
+    }
+
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item{
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__link{
+        font-size: 1.25rem;
+        line-height: 1;
+        font-weight: 400;
+        color: $cr-dark;
+        display: block;
+        transition: color 250ms ease-in-out;
+
+        &:hover, &:focus-visible{
+            color: $cr-submain;
+        }
+    }
+
+    &__footer {
+        margin-top: auto;
+        padding: 1rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    &__open {
+        display: none;
+    }
+
+    & .custom__link{
+        color: $cr-dark;
+
+        &:hover, &:focus-visible{
+            color: $cr-submain;
+        }
+
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// === Подключение медии ===
+@import "media"
+// #== Подключение медии ==#

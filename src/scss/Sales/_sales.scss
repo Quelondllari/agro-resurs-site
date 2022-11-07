@@ -1,0 +1,19 @@
+.sales{
+    padding-top: 2rem;
+    padding-bottom: 14rem;
+    background-image: url('@img/back_piece-big.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 1.875rem;
+        grid-row-gap: 1.875rem;
+    }
+}
+// === Подключение медии ===
+@import "media"
+// #== Подключение медии ==#

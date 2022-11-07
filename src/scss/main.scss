@@ -1,0 +1,74 @@
+// === Подключение основных файлов ===
+@import 'reset';
+@import 'fonts';
+@import 'variables';
+@import 'libs';
+// #== Подключение основных файлов ==#
+
+// === Основная зона глоб.стилей ===
+html{
+    min-width: 320px;
+
+    &.--mm_opened{
+        overflow: hidden;
+    }
+}
+body {
+    background-color: $cr-white;
+    font-family: $ff-main;
+    font-size: $fz-main;
+    line-height: $lh-main;
+    font-weight: $fw-main;
+    color: $cr-dark;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include m-phone{
+        font-size: 0.875rem;
+    }
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.container {
+    max-width: $container-main;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    &--fullw {
+        max-width: 100% !important;
+    }
+
+    &--bigw {
+        max-width: $container-big;
+    }
+
+    @include m-tablet-l {
+        max-width: 992px;
+    }
+
+    @include m-tablet-m {
+        max-width: 732px;
+    }
+
+    @include m-tablet-s {
+        max-width: 560px;
+    }
+
+    @include m-phone {
+        max-width: 100%;
+        padding: 0 0.7rem;
+    }
+}
+
+// #== Основная зона глоб.стилей ==#
+
+// === Блоки, остальное ===
+@import "includes.scss";
+// #== Блоки, остальное ==#

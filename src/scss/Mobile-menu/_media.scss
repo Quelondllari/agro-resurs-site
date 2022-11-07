@@ -1,0 +1,28 @@
+@include m-tablet-m{
+    .mobile-menu{
+        &__open{
+            display: inline-flex;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            padding: .575rem 1.1rem .613rem;
+        }
+    }
+}
+@include m-tablet-s{
+    .mobile-menu{
+        &__title{
+            font-size: 1.85rem;
+        }
+        &__open{
+            padding: 0.5rem 1.1rem 0.513rem;
+            font-size: 1.25rem;
+        }
+    }
+}
+@include m-phone{
+    .mobile-menu{
+        &__content{
+            width: 100%;
+        }
+    }
+}

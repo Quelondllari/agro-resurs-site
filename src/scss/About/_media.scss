@@ -1,0 +1,28 @@
+@include m-tablet-l{
+    .about{
+        &__info{
+            max-width: 800px;
+        }
+    }
+}
+
+@include m-phone{
+    .about{
+        &__info{
+            grid-template-columns: 100%;
+            margin-bottom: 1rem;
+
+            &-logo{
+                & > img{
+                    height: 106px;
+                }
+            }
+
+            &-text{
+                & > strong{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

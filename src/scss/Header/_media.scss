@@ -1,0 +1,167 @@
+@include m-tablet-l {
+    .header {
+        &__social {
+            display: none;
+        }
+
+        &__phone {
+            font-size: 1rem;
+
+            &-icon {
+                --size: 1.45rem;
+            }
+        }
+
+        &__nav {
+            &-link {
+                font-size: 0.875rem;
+            }
+        }
+
+        &__logotype {
+            padding-right: 1rem;
+
+            & .logotype__picture {
+                max-height: 86px;
+            }
+        }
+
+        &__catalog {
+            &-link {
+                padding: 1rem 0.6rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@include m-tablet-m {
+    .header {
+        $header: &;
+
+        &__info {
+            display: none;
+        }
+
+        &__content {
+            padding-bottom: 0.5rem;
+
+            &-container {
+                grid-template-columns: auto repeat(3, 1fr);
+                grid-template-areas: "logo nav nav phone" "catalog search search callback";
+                align-items: center;
+                grid-row-gap: 0.5rem;
+
+                #{$header + ".--is_fixed"} & {
+                    grid-template-columns: auto auto 1fr 1fr;
+                    grid-template-areas: "logo catalog search search callback";
+                    align-items: center;
+                }
+            }
+        }
+
+        &__logotype {
+            padding-right: 0;
+
+            & .logotype__picture {
+                max-height: 66px;
+            }
+        }
+
+        &__nav {
+            &-item {
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        &__catalog {
+            display: flex;
+            justify-content: center;
+
+            &-btn {
+                display: none;
+            }
+
+            &-dropdown {
+                display: none;
+            }
+        }
+    }
+}
+
+@include m-tablet-s {
+    .header {
+        $header: &;
+
+        &__content {
+            &-container {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas: "logo phone phone" "catalog search callback";
+            }
+        }
+
+        &__search {
+            &-field {
+                padding: .3rem 5rem .3rem 2.05rem;
+            }
+
+            &-icon {
+                left: 0.775rem;
+                font-size: 0.875rem;
+            }
+
+            &-btn {
+                font-size: 0.775rem;
+                padding: 0.9rem .875rem 0.862rem;
+            }
+        }
+
+        &__nav {
+            display: none;
+        }
+    }
+}
+
+@include m-phone {
+    .header {
+        $header: &;
+
+        &__content {
+            &-container {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas: "logo phone catalog" "search search search" "callback callback callback";
+                grid-column-gap: 0.5rem;
+                grid-row-gap: 0.5rem;
+
+                #{$header + ".--is_fixed"} & {
+                    grid-template-columns: auto 1fr auto;
+                    grid-template-areas: "logo phone catalog" "search search search";
+                    align-items: center;
+                }
+            }
+
+        }
+
+        &__phone {
+            &-icon {
+                --size: 1.75rem;
+            }
+
+            &-text {
+                display: none;
+            }
+
+            #{$header + ".--is_fixed"} & {
+                display: flex;
+            }
+        }
+
+        &__callback {
+            #{$header + ".--is_fixed"} & {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+// === Переменные ===
+
+// === Текст
+$fz-main: 1rem;
+$lh-main: 1.5;
+$fw-main: 400;
+$ff-main: "Jost", sans-serif;
+
+// === Цвета
+$cr-main: #012E89;
+$cr-submain: #D49F17;
+$cr-yellow: #F8C441;
+$cr-black: #000000;
+$cr-white: #FFFFFF;
+$cr-light: #FAFAFA;
+$cr-dark: #3d3d3d;
+$cr-gray: #575757;
+$cr-gray-input: #EFEFEF;
+$cr-gray-btn: #DDDDDD;
+$cr-dark-blue: #051A44;
+
+// === Ширина
+$container-main: 1200px;
+$container-big: 1500px;
+
+// === Медия
+@mixin m-large-desktop-inv {
+    @media all and (min-width: 1921px){
+        @content;
+    }
+}
+
+@mixin m-desktop {
+    @media all and (max-width: 1599px){
+        @content;
+    }
+}
+@mixin m-tablet-l{
+    @media all and (max-width: 1279px){
+        @content;
+    }
+}
+@mixin m-tablet-m{
+    @media all and (max-width: 1023px){
+        @content;
+    }
+}
+@mixin m-tablet-s{
+    @media all and (max-width: 767px){
+        @content;
+    }
+}
+@mixin m-phone{
+    @media all and (max-width: 575px){
+        @content;
+    }
+}
+
+// #== Переменные ==#

@@ -1,0 +1,23 @@
+@include m-tablet-l{
+    .sales{
+        padding-bottom: 10rem;
+    }
+}
+@include m-tablet-m{
+    .sales{
+        padding-bottom: 8.5rem;
+        
+        &__list{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@include m-phone{
+    .sales{
+        &__list{
+            grid-column-gap: 1rem;
+            grid-row-gap: 1rem;
+        }
+    }
+}

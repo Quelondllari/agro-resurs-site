@@ -1,0 +1,45 @@
+@include m-tablet-s{
+    .modal{
+        &__title{
+            font-size: 1.85rem;
+        }
+    }
+}
+@include m-phone{
+    .modal{
+        &__header{
+            padding: 1.5rem 1.5rem 0.8rem;
+        }
+
+        &__title{
+            font-size: 1.5rem;
+        }
+
+        &__text{
+            font-size: 0.875rem;
+        }
+
+        &__close{
+            font-size: 1.3rem;
+            top: 0.45rem;
+            right: 0.45rem;
+        }
+
+        &__body{
+            padding: 0.8rem 1.5rem 0.8rem;
+        }
+
+        &__footer{
+            padding: 0.8rem 1.5rem 1.5rem;
+
+            &-memo{
+                font-size: 0.7rem;
+
+                &::before{
+                    width: 0.875rem;
+                    height: 0.875rem;
+                }
+            }
+        }
+    }
+}

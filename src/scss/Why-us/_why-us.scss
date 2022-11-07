@@ -1,0 +1,119 @@
+.why-us{
+    margin-top: -7.875rem;
+    padding-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+
+    &::before{
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -50%;
+        transform: translateY(38%);
+        display: block;
+        height: 312px;
+        background-image: url('@img/back_piece-3.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 2;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &::after{
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        display: block;
+        height: calc(100% - (312px / 2.5));
+        z-index: 1;
+        background-color: $cr-light;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__container{
+        z-index: 3;
+        position: relative;
+    }
+
+    &__list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 1.875rem;
+        grid-row-gap: 2rem;
+    }
+
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &-icon{
+            --size: 6.8125rem;
+            min-width: var(--size);
+            width: var(--size);
+            height: var(--size);
+            min-height: var(--size);
+            max-width: var(--size);
+            max-height: var(--size);
+            border-radius: 10rem;
+            border: 3px solid $cr-yellow;
+            padding: 0.875rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            user-select: none;
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: -0.6rem;
+                right: -0.875rem;
+                display: block;
+                width: var(--size);
+                height: var(--size);
+                background-image: url('@img/icons/circle_dashed.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 1;
+            }
+
+            & > img{
+                position: relative;
+                z-index: 2;
+            }
+        }
+        
+        &-name{
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1;
+            color: $cr-main;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        &-text{
+            font-size: 1rem;
+            font-weight: 400;
+            color: $cr-gray;
+            margin: 0;
+        }
+    }
+}
+// === Подключение медии ===
+@import "media"
+// #== Подключение медии ==#

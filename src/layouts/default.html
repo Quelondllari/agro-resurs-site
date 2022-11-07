@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="address=no"/>
+    <title>{{titlePage}}</title>
+
+    <!-- Load libs styles -->
+    <link rel="stylesheet" href="libs/splide.min.css">
+
+    <!-- Load main style -->
+    <link rel="stylesheet" href="css/main.style.min.css">
+</head>
+<body>
+    {% include "layouts/header.html" %}
+        <main class="main">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <!-- /.main -->
+    {% include "layouts/footer.html" %}
+    {% include "layouts/components/Mobile-menu/index.html" %}
+
+    <!-- Load libs scripts -->
+    <script src="libs/splide.min.js"></script>
+    <script src="libs/splide-extension-auto-scroll.min.js"></script>
+    <script src="libs/glightbox.min.js"></script>
+    <script src="libs/anime.min.js"></script>
+    {# <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> #}
+    {# <script src="libs/select2.min.js"></script> #}
+    
+    <!-- Load main script -->
+    <script src="js/main.script.js"></script>
+</body>
+</html>

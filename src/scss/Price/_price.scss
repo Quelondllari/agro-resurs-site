@@ -1,0 +1,106 @@
+.price {
+    padding-top: 2rem;
+    background-image: url('@img/price_back.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        background-color: rgba($color: $cr-main, $alpha: .77);
+        backdrop-filter: blur(9.5px);
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__daun{
+        position: absolute;
+        z-index: 2;
+        user-select: none;
+        pointer-events: none;
+
+        &-top{
+            bottom: 73%;
+            left: 0;
+        }
+        &-bottom{
+            top: 73%;
+            right: 0;
+        }
+    }
+
+    &__title {
+        color: $cr-white;
+
+        &>span {
+            color: $cr-yellow;
+        }
+    }
+
+    &__container {
+        z-index: 3;
+        position: relative;
+    }
+
+    &__in {
+        width: 100%;
+        max-width: 970px;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: 1fr 38.2%;
+        grid-column-gap: 1rem;
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        pointer-events: none;
+
+        &>img {
+            width: 100%;
+            max-width: none;
+            margin-left: -2rem;
+            margin-top: -3rem;
+        }
+    }
+
+    &__form {
+        &-field {
+
+            &:last-child,
+            &:nth-last-child(2) {
+                align-items: center;
+            }
+        }
+
+        &-input {
+            border-color: $cr-white;
+            color: $cr-white;
+            background-color: rgba($color: $cr-white, $alpha: 0);
+
+            &:focus-visible{
+                color: $cr-white;
+            }
+        }
+
+        &-btn{
+            &:hover, &:focus-visible{
+                color: $cr-white;
+            }
+        }
+    }
+}
+
+// === Подключение медии ===
+@import "media"
+// #== Подключение медии ==#

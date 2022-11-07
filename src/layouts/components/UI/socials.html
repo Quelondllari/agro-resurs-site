@@ -1,0 +1,24 @@
+{% macro insert(options) %}
+    <ul class="social{%if(options.mix)%} {{options.mix}}{%endif%}">
+        <li class="social__item">
+            <a href="#?" target="_blank" class="social__link">
+                <img src="@img/icons/whatsapp.svg" alt="Whatsapp icon">
+            </a>
+        </li>
+        <li class="social__item">
+            <a href="#?" target="_blank" class="social__link">
+                <img src="@img/icons/telegram.svg" alt="Telegram icon">
+            </a>
+        </li>
+        <li class="social__item">
+            <a href="#?" target="_blank" class="social__link">
+                <img src="@img/icons/vk.svg" alt="VK icon">
+            </a>
+        </li>
+        <li class="social__item">
+            <a href="#?" target="_blank" class="social__link">
+                <img src="@img/icons/youtube.svg" alt="Youtube icon">
+            </a>
+        </li>
+    </ul>
+{% endmacro %}

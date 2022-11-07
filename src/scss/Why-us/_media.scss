@@ -1,0 +1,60 @@
+@include m-tablet-l {
+    .why-us {
+        &__list {
+            grid-column-gap: 1.275rem;
+        }
+
+        &__item {
+            &-name {
+                font-size: 0.875rem;
+            }
+
+            &-text {
+                font-size: 0.875rem;
+                line-height: 1.35;
+            }
+
+            &-icon {
+                --size: 5.413rem;
+                padding: 1.075rem;
+            }
+        }
+    }
+}
+
+@include m-tablet-m{
+    .why-us{
+        &__list{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+@include m-tablet-s{
+    .why-us{
+        &::before{
+            top: -45%;
+        }
+    }
+}
+
+@include m-phone{
+    .why-us{
+        &::before{
+            top: -35%;
+        }
+
+        &__list{
+            grid-column-gap: 1rem;
+        }
+
+        &__item{
+            &-icon{
+                --size: 4.813rem;
+            }
+
+            &-text{
+                line-height: 1.15;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item{
+        &:not(:last-child){
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__link{
+        --size: 1.5rem;
+        width: var(--size);
+        height: var(--size);
+        display: flex;
+        transition: opacity 250ms ease-in-out;
+        
+        & > img{
+            width: var(--size);
+            height: var(--size);
+        }
+
+        &:hover, &:focus-visible{
+            opacity: 0.65;
+        }
+    }
+}

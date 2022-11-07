@@ -1,0 +1,13 @@
+{% macro insert(title, span, type, mix) %}
+    <{{ type }} class="title {{mix}}">
+        {{ title }} <span>{{span}}</span>
+    </{{ type }}>
+{% endmacro %}
+{% macro insertWithLink(title, type = 'h1', linkText = "", linkUrl = "") %}
+    <div class="s-header">
+        <{{ type }} class="section__title">
+            {{ title }}
+        </{{ type }}>
+        <a href="{{linkUrl}}" class="section__link">{{linkText}}</a>
+    </div>
+{% endmacro %}

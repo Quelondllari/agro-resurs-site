@@ -1,0 +1,66 @@
+@include m-tablet-l{
+    .price{
+        &__in{
+            max-width: 850px;
+        }
+    }
+}
+
+@include m-tablet-m{
+    .price{
+        &__in{
+            grid-template-columns: 1fr 48.2%;
+            align-items: flex-end;
+        }
+        &__form{
+            padding-bottom: 2rem;
+        }
+    }
+}
+
+@include m-tablet-s{
+    .price{
+        &__daun{
+            width: 12rem;
+            height: 22rem;
+
+            &-top{
+                bottom: 67%;
+            }
+            &-bottom{
+                top: 65%;
+            }
+        }
+
+        &__in{
+            grid-template-columns: 100%;
+        }
+
+        &__image{
+            z-index: 1;
+            grid-row: 2;
+            opacity: 0.5;
+
+            & > img{
+                margin-top: -25rem;
+            }
+        }
+
+        &__form{
+            z-index: 2;
+        }
+    }
+}
+
+@include m-phone{
+    .price{
+        &__daun{
+            height: 17rem;
+            width: 8rem;
+
+            &-bottom{
+                top: 75%;
+            }
+        }
+    }
+}

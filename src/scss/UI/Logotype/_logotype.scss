@@ -1,0 +1,17 @@
+.logotype {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    text-decoration: none;
+
+    &__picture {
+        transition: opacity 250ms ease-in-out;
+
+        :hover > &,:focus-visible > &{
+            opacity: 0.45;
+        }
+    }
+}
