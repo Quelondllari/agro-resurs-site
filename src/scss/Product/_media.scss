@@ -16,6 +16,16 @@
                 line-height: 1;
             }
         }
+
+        &__info{
+            &-price{
+                font-size: 1.8rem;
+
+                & > small{
+                    font-size: 1.25rem;
+                }
+            }
+        }
     }
 }
 
@@ -40,12 +50,32 @@
                 grid-column: span 3;
             }
         }
+
+        &__info{
+            &-btns{
+                flex-direction: column;
+                align-items: flex-start;
+
+                & > *{
+                    width: 100%;
+
+                    &:not(:last-child){
+                        margin-right: 0;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
     }
 }
 
 @include m-tablet-s {
     .product {
         padding-bottom: 11.275rem;
+
+        &--page{
+            padding-bottom: 5rem;
+        }
 
         &__categories {
             grid-template-columns: 1fr 1fr;
@@ -61,12 +91,32 @@
                 grid-column: span 2;
             }
         }
+
+        &__info{
+            grid-template-columns: 100%;
+            padding: 1.5rem;
+
+            &-btns{
+                flex-direction: row;
+
+                & > *{
+                    &:not(:last-child){
+                        margin-right: 0.5rem;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
     }
 }
 
 @include m-phone {
     .product {
         padding-bottom: 10rem;
+
+        &--page{
+            padding-bottom: 3rem;
+        }
 
         &__categories {
             grid-auto-rows: 170px;
@@ -81,6 +131,47 @@
             &-btn{
                 font-size: 0.675rem;
                 padding: 0.55rem 1rem 0.562rem;
+            }
+        }
+
+        &__info{
+            padding: 1rem;
+
+            &-video{
+                height: 150px;
+            }
+
+            &-price{
+                font-size: 1.35rem;
+
+                & > small{
+                    font-size: 1rem;
+                }
+            }
+
+            &-btns{
+                display: flex;
+                flex-direction: column;
+
+                & > *{
+                    &:not(:last-child){
+                        margin-right: 0;
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        &__modifications{
+            &-memo{
+                font-size: 0.875rem;
+            }
+        }
+
+        &__tabs{
+            &-name{
+                font-size: 0.875rem;
+                padding: 0.875rem 0.5rem;
             }
         }
     }

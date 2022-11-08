@@ -1,0 +1,23 @@
+{% extends "layouts/components/UI/splide.html" %}
+{% set splideOptions = {
+    class: "product__info-slider-thumb",
+    id: "product__info-slider-thumb",
+    items: [
+        {
+            image: "@img/products/lushilniki.png"
+        },
+        {
+            image: "@img/products/borona.png"
+        },
+        {
+            image: "@img/products/izmelchitel.png"
+        }
+    ]
+}%}
+{% block slides %}
+    {% for product in splideOptions.items %}
+        <div class="splide__slide">
+            <img src="{{product.image}}" alt="">
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,50 @@
+ul:not([class]) {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    & > li{
+        padding-left: 1.5rem;
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0.75rem;
+            top: 0.7rem;
+            transform: translateY(-50%)translateX(-50%);
+            display: block;
+            --size: 0.5rem;
+            width: var(--size);
+            min-width: var(--size);
+            height: var(--size);
+            min-height: var(--size);
+            border-radius: calc(var(--size) * 2);
+            background-color: $cr-main;
+        }
+    }
+}
+
+ol:not([class]) {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    counter-reset: olList;
+
+    & > li{
+        padding-left: 1.5rem;
+        position: relative;
+
+        &::before{
+            counter-increment: olList;
+            content: counter(olList);
+            position: absolute;
+            left: 0.75rem;
+            top: 0.7rem;
+            transform: translateY(-50%)translateX(-50%);
+            font-size: inherit;
+            font-weight: 500;
+            color: $cr-main;
+        }
+    }
+}

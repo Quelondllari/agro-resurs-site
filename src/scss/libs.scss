@@ -92,7 +92,7 @@
         width: auto;
         height: auto;
         border-radius: 0.5rem;
-        border: 1px solid $cr-gray;
+        border: 2px solid $cr-dark;
         opacity: 1;
         background: rgba(255, 255, 255, .7);
         backdrop-filter: blur(1px);
@@ -107,8 +107,9 @@
 
         &:hover,
         &:focus-visible {
-            color: $cr-main;
-            border-color: $cr-main;
+            color: $cr-white;
+            background-color: $cr-submain;
+            border-color: $cr-submain;
         }
     }
 

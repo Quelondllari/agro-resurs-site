@@ -75,7 +75,7 @@ class Site {
     /**
      * Функция открытия/закрытия табов
      */
-    static initToggleTabs(selector) {
+    static initToggleText(selector) {
         let buttons = document.querySelectorAll(selector);
         // console.log(typeof buttons);
         if (!this.empty(buttons)) {
@@ -435,7 +435,7 @@ class Site {
         });
     }
 
-    static initFormCounter(){
+    static initFormCounter() {
         let buttons = document.querySelectorAll('*[data-form-counter="plus"],*[data-form-counter="minus"]')
         if (this.empty(buttons)) return
 
@@ -445,18 +445,18 @@ class Site {
 
             button.addEventListener("click", (e) => {
                 if (Site.empty(input)) return;
-                
+
                 let action = button.dataset.formCounter
-                input.value = (isNaN(+input.value * 1)) ? 0: input.value;
-                switch(action){
+                input.value = (isNaN(+input.value * 1)) ? 0 : input.value;
+                switch (action) {
                     case "minus":
                         input.value = ((+input.value - 1) < 0) ? 1 : (+input.value - 1)
-                    break;
+                        break;
                     case "plus":
                         input.value = +input.value + 1
-                    break;
+                        break;
                 }
-                
+
                 if ("createEvent" in document) {
                     let inputEvent = document.createEvent("HTMLEvents")
                     inputEvent.initEvent("input", false, true)
@@ -467,20 +467,139 @@ class Site {
             })
         })
     }
+
+    static initToggleTabs() {
+        let tabs = document.querySelectorAll("*[data-tab-toggle]")
+        if (!this.empty(tabs)) {
+            tabs.forEach((tab) => {
+                let tabsParent = tab.closest("*[data-tab-container]")
+                tab.addEventListener("click", (e) => {
+                    e.preventDefault()
+                    let target = tab.dataset.tabToggle
+                    if (target) {
+                        tabs.forEach((_tab) => {
+                            _tab.classList.remove("--is_active")
+                            tabsParent.querySelector(_tab.dataset.tabToggle).classList.remove("--is_active")
+                        })
+
+                        tab.classList.add("--is_active")
+                        tabsParent.querySelector(target).classList.add("--is_active")
+                    }
+                })
+            })
+        }
+    }
+
+    static initLazyYtFrames() {
+        let iframeContainers = document.querySelectorAll("*[data-lazy-video]")
+        if (this.empty(iframeContainers)) return
+        
+        iframeContainers.forEach((iframeContainer) => {
+            let button = iframeContainer.querySelector("button")
+            let iframe = iframeContainer.querySelector("iframe")
+            let idVideo = iframeContainer.dataset.lazyVideo
+            if (this.empty(button) && this.empty(iframe) && !idVideo) return
+        
+            iframeContainer.style.setProperty("--iframeBackImage", `url('https://img.youtube.com/vi/${idVideo}/sddefault.jpg')`)
+            // iframe.style.backgroundImage = `url('https://img.youtube.com/vi/${idVideo}/sddefault.jpg')`
+
+            button.addEventListener("click", (e) => {
+                e.preventDefault()
+                
+                iframeContainers.forEach((_iframeContainer) => {
+                    let iframe = _iframeContainer.querySelector("iframe")
+                    iframe.contentWindow.postMessage(JSON.stringify({event: "command", func: "stopVideo"}), "*")
+                    _iframeContainer.classList.remove("--video_opened")
+                })
+
+                let src = `https://www.youtube.com/embed/${idVideo}?autoplay=1&rel=0&VQ=720&enablejsapi=1&origin=${window.location.protocol}//${document.domain}`
+                
+                iframe.src = src
+                
+                iframeContainer.classList.add("--video_opened")
+            })
+        })
+    }
 }
 
 ready(() => {
+    // Включение корретного определенеия Vh
     Site.initCorrectVh()
-    Site.initHeaderCatalog();
-    // Site.initGlightbox();
-    Site.initHeaderMove();
+
+    // Включение кнопки открытия подменю каталога в шапке
+    Site.initHeaderCatalog()
+
+    // Включение функционала работы шапки
+    Site.initHeaderMove()
+
     // Включение функционала раскрытия/скрытия текста
-    Site.initToggleTabs(".text__toggle");
-    // Site.initMoveTop();
-    Site.initMobileMenu();
-    Site.initModals('*[data-modal]');
-    // Site.initFormCounter();
-    // Site.initTooltips()
+    Site.initToggleText(".text__toggle")
+
+    // Включение функционала мобильного меню
+    Site.initMobileMenu()
+
+    // Включение работы модальных окон
+    Site.initModals('*[data-modal]')
+
+    // Включение работы библиотеки GLightBox
+    Site.initGlightbox()
+
+    // Включение работы блоков с табами
+    Site.initToggleTabs()
+
+    Site.initLazyYtFrames()
+
+    // Инициализация подслайдера изображений для главного на странице продукта
+    let productInfoSliderThumb = Site.initSplideSliders(
+        ".product__info-slider-thumb",
+        {
+            fixedHeight: "55px",
+            fixedWidth: "75px",
+            perPage: 1,
+            perMove: 1,
+            gap: 8,
+            rewind: true,
+            arrows: true,
+            cover: true,
+            lazyLoad: "nearby",
+            pagination: false,
+            isNavigation: true,
+            speed: 2000,
+        },
+        null,
+        null
+    );
+
+    // Инициализация главного слайдера изображений на странице продукта
+    let productInfoSliderMain = Site.initSplideSliders(
+        ".product__info-slider-main",
+        {
+            type: "fade",
+            perPage: 1,
+            perMove: 1,
+            height: "350px",
+            lazyLoad: "nearby",
+            rewind: true,
+            pagination: false,
+            arrows: false,
+            drag: false,
+            speed: 3000,
+            breakpoints:{
+                575: {
+                    height: "250px"
+                }
+            }
+        },
+        null,
+        productInfoSliderThumb
+    );
+    if (
+        !Site.empty(productInfoSliderMain) &&
+        !Site.empty(productInfoSliderThumb)
+    ) {
+        productInfoSliderMain.mount();
+        productInfoSliderThumb.mount();
+    }
 
     /*
         [Отложенная яндекс карта]

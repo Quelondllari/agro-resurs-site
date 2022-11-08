@@ -1,0 +1,244 @@
+{% set titlePage = "Страница продукта - АгроРесурс" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+    <section class="product product--page">
+        <div class="container product__container">
+            <h1 class="title product__title">
+                Лущильник шириной захвата от
+                <span>3м до 8м</span>
+            </h1>
+            <div class="product__info">
+                <div class="product__info-content">
+                    <div class="iframe__video product__info-video" data-lazy-video="0y_OCiUV5J0">
+                        <button class="iframe__video-btn">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                aria-hidden="true"
+                                role="img"
+                                width="1.43em"
+                                height="1em"
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 256 180">
+                                <path
+                                    fill="red"
+                                    d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0
+                                        5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822
+                                        5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134Z"></path>
+                                <path fill="#FFF" d="m102.421 128.06l66.328-38.418l-66.328-38.418z"></path>
+                            </svg>
+                        </button>
+                        <iframe src="" class="iframe__video-content"></iframe>
+                    </div>
+                    <strong class="product__info-price">
+                        <small>Цена</small>810 000 руб.</strong>
+                    <div class="product__info-btns">
+                        <button class="btn product__info-btn" data-modal="#order__modal">Заказать</button>
+                        <button class="btn btn--alt product__info-btn" data-modal="#price__modal">Запросить прайс</button>
+                    </div>
+                </div>
+                <div class="product__info-images">
+                    {% include "layouts/components/Product/image-slider-main.html" %}
+                    {% include "layouts/components/Product/image-slider-thumb.html" %}
+                </div>
+            </div>
+            <h2 class="title product__title">Цены по
+                <span>модификациям</span>
+            </h2>
+            <div class="product__modifications">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>Наименование</span>
+                            </th>
+                            <th>
+                                <span>Размер, м</span>
+                            </th>
+                            <th>
+                                <span>
+                                    Масса,кг,<br>
+                                        не более<br></span>
+                                    </th>
+                                    <th>
+                                        <span>
+                                            Цена, руб.<br>
+                                                с НДС 20%
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Наименование">
+                                            <span>Лущильник (не складной), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>3,0</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>2500</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>890 000</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Наименование">
+                                            <span>Лущильник (не складной), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>4,0</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>2900</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>1 245 000</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Наименование">
+                                            <span>Лущильник (складной), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>5,0</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>3800</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>1 775 000</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Наименоание">
+                                            <span>Лущильник (складной), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>6,0</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>4250</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>1 910 000</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Наименование">
+                                            <span>Лущильник (складной), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>7,0</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>4900</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>2 230 000</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Наименование">
+                                            <span>Лущильник (складной), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>8,5</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>7200</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>3 070 000</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Наименование">
+                                            <span>Лущильник (складные), ступица ФКЛ</span>
+                                        </td>
+                                        <td data-label="Размер, м">
+                                            <span>10,5</span>
+                                        </td>
+                                        <td data-label="Масса, кг, не более">
+                                            <span>8800</span>
+                                        </td>
+                                        <td data-label="Цена, руб. с НДС 20%">
+                                            <span>3 850 000</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="product__modifications-memo">Цены указаны на заводе изготовителя, без учета доставки</p>
+                        </div>
+                        <div class="product__tabs" data-tab-container="data-tab-container">
+                            <div class="product__tabs-header">
+                                <div class="product__tabs-header-mbl">
+                                    <a href="javascript:void(0);" class="product__tabs-name --is_active" data-tab-toggle="#product__description">
+                                        Описание
+                                    </a>
+                                    <a href="javascript:void(0);" class="product__tabs-name" data-tab-toggle="#product__char">
+                                        Характеристики
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product__tabs-body">
+                                <div class="product__tab --is_active" id="product__description">
+                                    <div class="product__tab-content">
+                                        <p>
+                                            Скоростной лущильник может применяться как для поверхностной стерневой обработки на лёгких и средних почвах, так и для
+                                            предпосевной обработки почвы для посева по мульче или после вспашки. Таким образом, ЛДС-6 является универсальным
+                                            агрегатом как при традиционной технологии, так и при минимальной обработке почвы. Высокая скорость работы позволяет
+                                            добиться высокой производительности.
+                                        </p>
+                                        <p>
+                                            Прочные пружинные листовые стойки производства Bellota (Испания) обеспечивают длительную и бесперебойную работу даже на
+                                            каменистых почвах.
+                                        </p>
+                                        <p>
+                                            Необслуживаемые подшипники, на которых закреплены полусферические зубчатые диски диаметром 510 мм, защищены от
+                                            проникновения пыли, грязи и воды специальным пыльником.
+                                        </p>
+                                        <p>
+                                            Специальная конструкция ЛДС, состоящая из прицепной центральной части и поднимающихся крыльев, позволяют с легкостью
+                                            транспортировать агрегат к месту работы.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="product__tab" id="product__char">
+                                    <div class="product__tab-content">
+                                        <b>Модель 3.0</b>
+                                        <ul>
+                                            <li>Модель: 3</li>
+                                            <li>Вид агрегатирования: прицепной</li>
+                                            <li>Агрегатирование с тракторами класса: 1,4...2</li>
+                                            <li>Масса (конструкционная), кг, не более: 2000</li>
+                                            <li>Габаритные размеры, в рабочем положении, мм (д/ш/в): 6400х3000х1350</li>
+                                            <li>Габаритные размеры, в транспортном положении, мм (д/ш/в): 6200х3000х1400</li>
+                                            <li>Дорожный просвет, мм, не менее: 300</li>
+                                            <li>Рабочая скорость, км/ч: до 18</li>
+                                            <li>Транспортная скорость, км/ч: до 20</li>
+                                            <li>Ширина захвата, м: 3 ± 10%</li>
+                                            <li>Производительность за 1 час основного времени, га/ч (расчетная): до 3</li>
+                                        </ul>
+                                        <b>Модель 4.0</b>
+                                        <ol>
+                                            <li>Модель: 4</li>
+                                            <li>Вид агрегатирования: прицепной</li>
+                                            <li>Агрегатирование с тракторами класса: 1,4...2</li>
+                                            <li>Масса (конструкционная), кг, не более: 2000</li>
+                                            <li>Габаритные размеры, в рабочем положении, мм (д/ш/в): 6400х3000х1350</li>
+                                            <li>Габаритные размеры, в транспортном положении, мм (д/ш/в): 6200х3000х1400</li>
+                                            <li>Дорожный просвет, мм, не менее: 300</li>
+                                            <li>Рабочая скорость, км/ч: до 18</li>
+                                            <li>Транспортная скорость, км/ч: до 20</li>
+                                            <li>Ширина захвата, м: 3 ± 10%</li>
+                                            <li>Производительность за 1 час основного времени, га/ч (расчетная): до 3</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endblock %}

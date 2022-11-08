@@ -1,0 +1,123 @@
+table {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+    width: 100%;
+    background-color: $cr-white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 50px rgba($color: $cr-black, $alpha: 0.08);
+
+    & thead {
+        & th {
+            background-color: $cr-gray-input;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: $cr-dark;
+            padding: 1rem;
+
+
+            &:not(:last-child) {
+                border-right: 1px solid $cr-gray-btn;
+            }
+        }
+    }
+
+    & tbody {
+        & tr {
+            &:not(:last-child) {
+                border-bottom: 1px solid $cr-gray-btn;
+            }
+        }
+
+        & td {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: $cr-dark;
+
+            &>span {
+                width: 100%;
+            }
+
+            &>p {
+                margin: 0;
+                width: 100%;
+            }
+
+            &:not(:last-child) {
+                border-right: 1px solid $cr-gray-btn;
+            }
+        }
+    }
+
+    @include m-tablet-s {
+
+        box-shadow: none;
+
+        & thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            background-color: none;
+        }
+
+        & tbody {
+            & tr {
+                display: block;
+                margin-bottom: 1rem;
+                box-shadow: 0 4px 50px rgba($color: $cr-black, $alpha: 0.08);
+                overflow: hidden;
+                border-radius: 0.5rem;
+
+                &:not(:last-child) {
+                    border-bottom: 0;
+                }
+            }
+
+            & td {
+                padding: 0.5rem;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 30% 1fr;
+                grid-column-gap: 1rem;
+                text-align: left;
+
+                &::before {
+                    content: attr(data-label);
+                    font-weight: 500;
+                    display: flex;
+                    font-size: 1rem;
+                    line-height: 1.2;
+                    background-color: $cr-gray-input;
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                }
+
+                &:not(:last-child) {
+                    border-right: 0;
+                }
+            }
+        }
+    }
+
+    @include m-phone{
+        & tbody{
+            & td {
+                grid-template-columns: 40% 1fr;
+                line-height: 1.15;
+
+                &::before{
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}

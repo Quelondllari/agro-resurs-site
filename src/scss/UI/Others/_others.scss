@@ -1,12 +1,104 @@
-a:not([class]){
+a:not([class]) {
     color: $cr-dark;
     line-height: inherit;
     font-weight: inherit;
     transition: color 150ms ease-in-out;
 
-    &:hover, &:focus-visible{
+    &:hover,
+    &:focus-visible {
         color: $cr-main;
         text-decoration: none;
+    }
+}
+
+.iframe__video {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 2;
+        background-image: var(--iframeBackImage);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: inherit;
+        transition: all 250ms ease-in-out;
+    }
+
+    &.--video_opened::before {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        font-size: 3rem;
+        line-height: 0.8;
+        border: 0;
+        background-color: rgba($color: $cr-black, $alpha: 0.25);
+        border-radius: inherit;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        transform-origin: center;
+        transition: all 250ms ease-in-out;
+
+        &>svg {
+            transition: all 150ms ease-in-out;
+        }
+
+        &:hover,
+        &:focus-visible {
+            opacity: 0.65;
+
+            &>svg {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &.--video_opened &-btn {
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        visibility: hidden;
+    }
+
+    &-content {
+        position: relative;
+        z-index: 1;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    @include m-phone{
+        &-btn{
+            font-size: 2rem;
+        }
     }
 }
 
@@ -100,53 +192,4 @@ a:not([class]){
     z-index: 15;
     pointer-events: none;
     user-select: none;
-}
-
-.cart_add_message {
-    position: fixed;
-    top: 10%;
-    right: 1.5rem;
-    transition: all 300ms ease-in-out;
-    max-width: 250px;
-    min-width: 250px;
-    z-index: 100;
-
-    background-color: rgba($color: $cr-black, $alpha: .8);
-    color: $cr-white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: flex;
-    margin-bottom: 0.8rem;
-    animation: dropCardAnim ease-in-out 4s;
-    animation-iteration-count: 1;
-    transform-origin: 50% 50%;
-    font-size: 0.875rem;
-    line-height: 1.15;
-    font-weight: 600;
-
-    @include m-phone {
-        top: 0;
-        left: 1rem;
-        right: 0;
-        width: auto;
-        max-width: calc(100% - 2rem);
-        min-width: none;
-    }
-}
-
-@keyframes dropCardAnim {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    50% {
-        transform: translateY(50px);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
 }
