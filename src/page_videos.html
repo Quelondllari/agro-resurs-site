@@ -1,0 +1,57 @@
+{% set titlePage = "Страница видео - АгроРесурс" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+    <section class="videos">
+        <div class="container videos__container">
+            <h1 class="title videos__title">
+                Видео о
+                <span>нашей технике</span>
+            </h1>
+            <div class="videos__list">
+                <div class="videos__item">
+                    <div class="iframe__video videos__item-video" data-lazy-video="0y_OCiUV5J0">
+                        <button class="iframe__video-btn">
+                            Play
+                        </button>
+                        <iframe src="" class="iframe__video-content"></iframe>
+                    </div>
+                    <p class="videos__item-text">
+                        KARANLIĞIN // HELIN, ARB4 and VALORANT - Official Audio
+                    </p>
+                </div>
+                <div class="videos__item">
+                    <div class="iframe__video videos__item-video" data-lazy-video="qJa-VFwPpYA">
+                        <button class="iframe__video-btn">
+                            Play
+                        </button>
+                        <iframe src="" class="iframe__video-content"></iframe>
+                    </div>
+                    <p class="videos__item-text">Gorillaz - New Gold ft. Tame Impala & Bootie Brown (Official Visualiser)</p>
+                </div>
+                <div class="videos__item">
+                    <div class="iframe__video videos__item-video" data-lazy-video="BnnbP7pCIvQ">
+                        <button class="iframe__video-btn">
+                            Play
+                        </button>
+                        <iframe src="" class="iframe__video-content"></iframe>
+                    </div>
+                    <p class="videos__item-text">
+                        Cyberpunk: Edgerunners — Ending Theme | Let You Down by Dawid Podsiadło | Netflix
+                    </p>
+                </div>
+            </div>
+
+            <div class="videos__banner">
+                <div class="videos__banner-container">
+                    <div class="videos__banner-image">
+                        <img src="@img/videos_img.png" class="lazyload" alt="">
+                    </div>
+                    <div class="videos__banner-content">
+                        <strong class="title videos__banner-title">Посетите <span>наш youtube</span> канал</strong>
+                        <a href="#?" class="btn videos__banner-btn">Перейти на канал</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

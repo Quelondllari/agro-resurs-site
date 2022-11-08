@@ -1,0 +1,66 @@
+{% set titlePage = "Страница контактов - АгроРесурс" %}
+{% extends "layouts/default.html" %}
+{% block content %}
+    <section class="contacts">
+        <div class="container contacts__container">
+            <h1 class="title contacts__title">
+                <span>Наши</span> контакты
+            </h1>
+
+            <div class="contacts__info">
+                <div class="contacts__info-content">
+                    <div class="contacts__info-col">
+                        <strong class="contacts__info-title">Адрес</strong>
+
+                        <div class="contacts__info-row">
+                            <b class="contacts__info-subtitle">Офис</b>
+                            <p class="contacts__info-text">460037, Оренбургская обл., г. Оренбург, ул. Путепроводная, д. 2/1, 3 эт.</p>
+                        </div>
+
+                        <div class="contacts__info-row">
+                            <b class="contacts__info-subtitle">Производство</b>
+                            <p class="contacts__info-text">Ростовская обл., Кагальницкий район, ст. Кировская, ул. Московская, 120</p>
+                        </div>
+
+                        <div class="contacts__info-row">
+                            <b class="contacts__info-subtitle">Реквизиты</b>
+                            <p class="contacts__info-text">
+                                ИНН 5609066293
+                            </p>
+                            <p class="contacts__info-text">
+                                ОГРН 1085658003771
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contacts__info-col">
+                        <strong class="contacts__info-title">Телефон</strong>
+
+                        <div class="contacts__info-row">
+                            <a href="tel:+79058109292" class="contacts__info-link">+7 (905) 810-92-92</a>
+                            <a href="tel:+79656927281" class="contacts__info-link">+7 (965) 692-72-81</a>
+                        </div>
+
+                        <strong class="contacts__info-title">E-mail</strong>
+                        <div class="contacts__info-row">
+                            <a href="oragroresurs@mail.ru" class="contacts__info-link contacts__info-link--big">oragroresurs@mail.ru</a>
+                        </div>
+
+                        <strong class="contacts__info-title">Режим работы</strong>
+                        <div class="contacts__info-row">
+                            <p class="contacts__info-text">
+                                Пн-Пт с 08:30 до 17:30 (без перерыва), Сб, Вс - по согласованию.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__callback">
+                    <strong class="contacts__callback-title">Остались вопросы?</strong>
+                    <p class="contacts__callback-text">Напишите нам - мы ответим или перезвоним Вам в течении 5 минут</p>
+                    <button class="btn contacts__callback-btn" data-modal="#callback__modal">Написать сообщение</button>
+                </div>
+            </div>
+
+            <div class="contacts__map" id="ya_map" data-coordinates="51.742130, 55.095464" data-center="51.742130, 55.095464" data-address="Россия, Оренбург, микрорайон Ситцовка, Путепроводная улица, 2/1"></div>
+        </div>
+    </section>
+{% endblock %}

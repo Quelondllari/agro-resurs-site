@@ -604,7 +604,7 @@ ready(() => {
     /*
         [Отложенная яндекс карта]
     */
-    var section_contacts = document.querySelector(".default__map");
+    var section_contacts = document.querySelector(".contacts");
     if (section_contacts == null) {
         section_contacts = document.querySelector(".contacts_page");
     }
@@ -646,9 +646,9 @@ ready(() => {
                     {
                         // preset: 'islands#brownPocketIcon'
                         iconLayout: "default#image",
-                        iconImageHref: "/img/icons/save_marker.png",
-                        iconImageSize: [40, 55],
-                        iconImageOffset: [-15, -60],
+                        iconImageHref: "/img/marker_map.png",
+                        iconImageSize: [48, 70],
+                        iconImageOffset: [-24, -55],
                     }
                 );
 

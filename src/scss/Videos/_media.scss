@@ -1,0 +1,70 @@
+@include m-tablet-l {
+    .videos {
+        &__banner {
+            &-container {
+                max-width: 870px;
+                grid-template-columns: 1fr 45.2%;
+            }
+
+            &-image {
+                &>img {
+                    max-width: 350px;
+                }
+            }
+        }
+    }
+}
+
+@include m-tablet-s {
+    .videos {
+        &__list {
+            grid-template-columns: 100%;
+        }
+
+        &__item {
+            &-text {
+                font-size: 0.875rem;
+            }
+        }
+
+        &__banner {
+            &-container {
+                grid-template-columns: 100%;
+            }
+
+            &-image {
+                z-index: 1;
+                grid-row: 2;
+                opacity: 0.5;
+
+                &>img {
+                    margin-top: -18rem;
+                }
+            }
+
+            &-content {
+                z-index: 2;
+                padding-bottom: 5rem;
+            }
+        }
+    }
+}
+
+@include m-phone{
+    .videos{
+        &__item{
+            &-video{
+                height: 170px;
+            }
+        }
+
+        &__banner{
+            &-image{
+                & > img{
+                    margin-top: -15rem;
+                    max-width: 250px;
+                }
+            }
+        }
+    }
+}

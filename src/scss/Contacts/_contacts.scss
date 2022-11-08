@@ -1,0 +1,125 @@
+.contacts{
+    padding-bottom: 4rem;
+
+    &__info{
+        display: grid;
+        grid-template-columns: 1fr 40%;
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        &-content{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 2rem;
+            grid-row-gap: 1.5rem;
+        }
+
+        &-col{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-row{
+            display: flex;
+            flex-direction: column;
+            
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+        }
+
+        &-title{
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: $cr-dark;
+            margin-bottom: 1rem;
+        }
+
+        &-subtitle{
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            color: $cr-gray;
+        }
+
+        &-text{
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.25;
+            color: $cr-gray;
+
+            &:not(:last-child){
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        &-link{
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.25;
+            color: $cr-black;
+            transition: color 250ms ease-in-out;
+
+            &--big{
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+
+            &:not(:last-child){
+                margin-bottom: 0.3rem;
+            }
+
+            &:hover, &:focus-visible{
+                color: $cr-submain;
+            }
+        }
+    }
+
+    &__callback{
+        border-radius: 0.5rem;
+        background-color: $cr-main;
+        background-image: url("@img/back_piece.svg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 15px 15px 50px 0 rgba($color: $cr-main, $alpha: 0.15);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &-title{
+            font-size: 1.85rem;
+            line-height: 1;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: $cr-white;
+        }
+
+        &-text{
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin: 0 0 4rem;
+            color: $cr-yellow;
+        }
+    }
+
+    &__map{
+        height: 400px;
+        width: 100%;
+        border-radius: 9px;
+        overflow: hidden;
+        box-shadow: 15px 15px 50px 0 rgba($color: $cr-main, $alpha: 0.15);
+    }
+}
+// === Подключение медии ===
+@import "media"
+// #== Подключение медии ==#

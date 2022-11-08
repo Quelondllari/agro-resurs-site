@@ -3,6 +3,10 @@
     padding-bottom: 9.875rem;
     position: relative;
 
+    &--page{
+        padding-top: 0;
+    }
+
     &::after {
         content: "";
         width: 100%;
